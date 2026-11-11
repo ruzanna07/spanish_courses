@@ -1,0 +1,77 @@
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        .starry-bg {
+            background-image: radial-gradient(white 1px, transparent 0), radial-gradient(white 1.5px, transparent 0);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            background-color: #0f172a;
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1b4b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 5px;
+        }
+
+        @keyframes walkDog{from{transform:translateX(0)}to{transform:translateX(130vw)}}
+        @keyframes jumpJoy{0%{transform:translateY(0)}15%{transform:translateY(-36px) rotate(-4deg)}30%{transform:translateY(0) scale(.97,1.03)}45%{transform:translateY(-28px) rotate(4deg)}60%{transform:translateY(0)}78%{transform:translateY(-14px) rotate(-3deg)}100%{transform:translateY(0)}}
+        @keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+        @keyframes tiltHead{0%{transform:rotate(0)}40%{transform:rotate(-14deg) translateX(-8px)}100%{transform:rotate(-9deg) translateX(-4px)}}
+        @keyframes talk{from{transform:scale(1)}to{transform:scale(1.04)}}
+        @keyframes borderflow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+        @keyframes sparkUp{0%{opacity:0;transform:translateY(10px) scale(.4)}20%{opacity:1}100%{opacity:0;transform:translateY(-90px) scale(1.4) rotate(40deg)}}
+        @keyframes glint{0%,70%,100%{opacity:0;transform:scale(.3) rotate(0)}80%{opacity:1;transform:scale(1.2) rotate(45deg)}90%{opacity:.6;transform:scale(.8) rotate(90deg)}}
+        @keyframes bubblePop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+        @keyframes glowpulse{0%,100%{box-shadow:0 0 22px rgba(168,85,247,.55),0 0 50px rgba(236,72,153,.25)}50%{box-shadow:0 0 34px rgba(34,211,238,.6),0 0 70px rgba(168,85,247,.4)}}
+        @keyframes statpop{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+        @keyframes modalIn{from{transform:scale(.7) translateY(30px);opacity:0}to{transform:none;opacity:1}}
+        
+        .laika-card{background:linear-gradient(120deg,#ec4899,#8b5cf6,#22d3ee,#fbbf24,#ec4899);background-size:300% 100%;animation:borderflow 6s linear infinite,glowpulse 3s ease-in-out infinite;padding:4px;border-radius:30px}
+        .laika-inner{background:radial-gradient(ellipse at top,#312e81,#0f0a2e 75%);border-radius:27px;padding:14px;text-align:center}
+        .bubble{position:relative;background:#fff;color:#312e81;font-weight:600;border-radius:20px;padding:10px 14px;min-height:3.6rem;display:flex;align-items:center;justify-content:center;font-size:.95rem;line-height:1.25;margin-bottom:14px}
+        .bubble::after{content:'';position:absolute;left:50%;bottom:-11px;margin-left:-11px;border:11px solid transparent;border-bottom:0;border-top-color:#fff}
+        .bubble.pop{animation:bubblePop .35s cubic-bezier(.3,1.6,.5,1)}
+        
+        /* True 3D Interactive Tilt Stage */
+        .laika-stage{position:relative;perspective:900px;cursor:pointer;padding:6px 0 4px}
+        .laika-tilt{transform-style:preserve-3d;transition:transform .15s ease-out}
+        .laika-float{animation:float 3.6s ease-in-out infinite}
+        .do-happy{animation:jumpJoy 1.4s ease-out,wiggle .45s 1.4s 2}
+        .do-sad{animation:tiltHead .8s ease-out forwards}
+        .laika-frame{position:relative;width:88%;margin:0 auto;border-radius:26px;overflow:hidden;border:3px solid rgba(255,255,255,.9);box-shadow:0 20px 35px rgba(0,0,0,.6),0 0 30px rgba(168,85,247,.7);transform:translateZ(30px);transition:box-shadow .3s}
+        .laika-frame img{display:block;width:100%;height:auto}
+        .st-happy .laika-frame{box-shadow:0 0 15px 5px #34d399,0 0 60px 16px rgba(52,211,153,.8)}
+        .st-sad .laika-frame{box-shadow:0 0 30px 8px rgba(96,165,250,.7)}
+        .talking .laika-frame{animation:talk .3s ease-in-out infinite alternate}
+        .glint{position:absolute;left:53%;top:11%;font-size:1.6rem;animation:glint 5s ease-in-out infinite;pointer-events:none;z-index:2}
+        .sparkle-layer{position:absolute;inset:0;pointer-events:none;z-index:5;overflow:visible}
+        .sp{position:absolute;font-size:1.5rem;animation:sparkUp 1.4s ease-out forwards}
+
+        .dash-tile{background:rgba(30,27,75,.8);border:1px solid rgba(99,102,241,.4);border-radius:18px;padding:10px 14px}
+        .ring{width:56px;height:56px;border-radius:50%;padding:5px;background:#312e81;flex:none}
+        .ring-in{width:100%;height:100%;border-radius:50%;background:#1e1b4b;display:grid;place-items:center;font-weight:800;font-size:.78rem;color:#6ee7b7}
+        .pop{animation:statpop .45s ease-out}
+        .btn-ok{outline:4px solid #34d399;box-shadow:0 0 30px #34d399!important;transform:scale(1.07)}
+        .btn-no{outline:4px solid #fb7185;opacity:.65}
+        .fs-btn{background:linear-gradient(90deg,#8b5cf6,#ec4899);color:#fff;font-weight:700;font-size:.85rem;padding:8px 16px;border-radius:999px;box-shadow:0 0 18px rgba(236,72,153,.5);transition:transform .2s}
+        .fs-btn:hover{transform:scale(1.07)}
+        .fs-on{position:fixed;inset:0;z-index:100;overflow-y:auto;padding:1rem 1.5rem 2rem;background:radial-gradient(ellipse at top,#3b2a8f,#0b1030 70%)}
+        .fs-on #stars-game-arena{min-height:60vh}
+        .fs-on .grid.lg\:grid-cols-\[320px_1fr\]{max-width:1200px;margin-inline:auto}
+        .modal-card{animation:modalIn .5s cubic-bezier(.3,1.5,.5,1)}
